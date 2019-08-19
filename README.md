@@ -1,4 +1,5 @@
-Copy files from one location to another, picking only the ones that were created within a specified date range and matching particular filetypes/extensions.
+# Dated-and-extension-file-sort
+Copy files from one location to another, picking only the ones that were created within a specified date range and matching particular filetypes/extensions
 Matching files are copied to dated folders with a custom description and further split by file extensions into subfolders. The steps it takes are listed below:
 
 Dated_and_extension_file_sort.ps1
