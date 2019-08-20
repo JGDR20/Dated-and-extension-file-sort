@@ -14,3 +14,5 @@ Dated_and_extension_file_sort.ps1
 5.	Work out the new folder structures and create them if they don't exist
 6.	Check if the files has already been added to the destination
 7.	Copy the files
+
+# NOTE: Add source and destination paths into the accompanying .\config.xml file!
