@@ -9,7 +9,7 @@ Dated_and_extension_file_sort.ps1
 3.	Ask for $description, the custom description to tack onto the end of the dated folders
 	e.g. 'A Summer's Day' would give 2001-03-24 - A Summer's Day as the dated folder
 4.	Check that each file in the $Source directory has an allowed file extension
-	(you can get rid of this if you want to sort all files by removing the -Include section)
+	(you can leave this blank to include all files (\*) by default)
 	and was created within the date range specified
 5.	Work out the new folder structures and create them if they don't exist
 6.	Check if the files has already been added to the destination
