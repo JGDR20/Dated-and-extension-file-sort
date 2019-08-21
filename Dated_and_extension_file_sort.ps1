@@ -1,8 +1,9 @@
-### CHANGE DEFAULTS in Default Values hashtable below!!!
+### CHANGE DEFAULTS in $defaultVals hashtable below!!!
 ## Parameters for $daysOldest, $daysNewest (counting back from now)
 ## $description name (allows blank/null)
 ## $source and $destination directories
-## $include extension filter e.g. *.jpg, *.avi
+## $include extension filter e.g. *.jpg, *.avi as an array with one extension per element
+##	# example: include[0]: *.jpg - include[1]: *.avi
 [CmdletBinding()]
 Param(
 	[Parameter(Mandatory=$True)][AllowNull()][int]$daysOldest,
@@ -10,7 +11,7 @@ Param(
 	[Parameter(Mandatory=$True)][AllowEmptyString()][string]$description,
 	[Parameter(Mandatory=$True)][AllowEmptyString()][string]$source,
 	[Parameter(Mandatory=$True)][AllowEmptyString()][string]$destination,
-	[Parameter(Mandatory=$True)][AllowEmptyString()][string]$include
+	[Parameter(Mandatory=$True)][AllowEmptyCollection()][array]$include
 )
 
 ## Stop running the script if any errors occur
@@ -24,7 +25,9 @@ $defaultVals = @{
 	"description" = "";
 	"source" = "D:\User\Documents\Some\Source";
 	"destination" = "D:\User\Documents\Some\Destination";
-	"include" = "*"
+	"include" = @(
+		"*"
+	)
 }
 
 ## Running Values hashtable
@@ -84,7 +87,7 @@ Write-Host Using these extensions only: $runningVals.include
 
 # Find all '-include'ed files in $source, created within the date range specified
 # Add -recursive to Get-ChildItem in the below line (before the | ) to search subdirectories
-Get-ChildItem "$($runningVals.source)\*" -Include $runningVals.include |
+Get-ChildItem -Path "$($runningVals.source)\*" -Include $runningVals.include |
 	# Compare the creation dates only (remove time - e.g. 2001-03-24 06:00:00 becomes 2001-03-24)
 	Where-Object {($_.CreationTime).Date -ge $StartDate `
 			-and ($_.CreationTime).Date -le $EndDate} |
