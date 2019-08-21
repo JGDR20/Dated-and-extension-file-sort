@@ -27,9 +27,9 @@ The final results will look something like:
 > Dated_and_extension_file_sort.ps1
 daysOldest: 3
 daysNewest: 1
-description: 
-source: 
-destination: 
+description: A Summer's Day
+source: <e.g. a microSD card from a phone>
+destination: <e.g. holiday pics folder>
 include[0]: *.jpg
 include[1]: *.txt
 include[2]: *.mp4
