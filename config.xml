@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<config>
-	<daysOldest>0</daysOldest>
-	<daysNewest>0</daysNewest>
-	<description></description>
-	<source></source>
-	<destination></destination>
-	<include>*</include>
-</config>
