@@ -4,15 +4,17 @@ Matching files are copied to dated folders with a custom description and further
 
 Dated_and_extension_file_sort.ps1
 
-1.	Ask for $daysOldest, the farthest (in whole days) you want to go back in time e.g. 5
-2.	Ask for $daysNewest, the closest (in whole days) you want to go back in time e.g. 2
-3.	Ask for $description, the custom description to tack onto the end of the dated folders
+1.	Default values are set in the $defaultVals hashtable in the script
+  *	Change the source and destination values to something appropriate!
+2.	Ask for $daysOldest, the farthest (in whole days) you want to go back in time e.g. 5
+3.	Ask for $daysNewest, the closest (in whole days) you want to go back in time e.g. 2
+4.	Ask for $description, the custom description to tack onto the end of the dated folders
 	e.g. 'A Summer's Day' would give 2001-03-24 - A Summer's Day as the dated folder
-4.	Check that each file in the $Source directory has an allowed file extension
+5.	Check that each file in the $Source directory has an allowed file extension
 	(you can leave this blank to include all files (\*) by default)
 	and was created within the date range specified
-5.	Work out the new folder structures and create them if they don't exist
-6.	Check if the files has already been added to the destination
-7.	Copy the files
+6.	Work out the new folder structures and create them if they don't exist
+7.	Check if the files has already been added to the destination
+8.	Copy the files
 
-# NOTE: Add source and destination paths into the accompanying .\config.xml file!
+# NOTE: Replace the source and destination paths in the $defaultVals hashtable!
